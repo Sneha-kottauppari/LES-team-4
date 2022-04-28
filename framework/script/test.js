@@ -4,10 +4,14 @@ function feedback_Form(){
 
 
 function myclick(){
-    window.location.href="end.html";  
+    window.location.href="/framework/introduction.html";  
 
 }
 
+function home(){
+    window.location.href="/framework/introduction.html";  
+
+}
 
 // document.addEventListener('DOMContentLoader', function(){
 //     document.querySelector('button').onclick=a;
