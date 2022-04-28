@@ -16,6 +16,19 @@ function feedback(){
     window.location.href="/framework/feedback.html";  
 
 }
+function yesbutton(){
+    window.location.href="/framework/meetingroom.html";  
+
+}
+function OnConfirm(msg, myYes) {
+    var confirmBox = $("#confirm");
+    confirmBox.find(".message").text(msg);
+    confirmBox.find(".yes").unbind().click(function () {
+        confirmBox.hide();
+    });
+    confirmBox.find(".yes").click(myYes);
+    confirmBox.show();
+}
 
 // document.addEventListener('DOMContentLoader', function(){
 //     document.querySelector('button').onclick=a;

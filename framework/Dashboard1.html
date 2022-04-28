@@ -48,8 +48,14 @@
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="/framework/images/bell.png" width="25" height="25"></a>
                   <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" >notification one</a></li>
-                      <li><a class="dropdown-item" href="#">notification two</a></li>
+                    <div id="confirm">
+                        <div class="message" style="text-align: center;">HI THERE<br> A Student is looking for partner!<br>Do you want to join??</div>
+                        <br />
+                        <button class="yes" onclick="yesbutton()">Yes</button>
+                        <button class="yes">No</button>
+                    </div>
+                      <li><button class="dropdown-item" onClick="OnConfirm()">notification one</button></li>
+                      <li><button class="dropdown-item" href="#" >notification two</button></li>
                       <li><a class="dropdown-item" href="#">notification three</a></li>
                       <li><a class="dropdown-item" href="#">notification four</a></li>
                   </ul>
