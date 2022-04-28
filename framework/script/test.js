@@ -12,6 +12,10 @@ function home(){
     window.location.href="/framework/introduction.html";  
 
 }
+function feedback(){
+    window.location.href="/framework/feedback.html";  
+
+}
 
 // document.addEventListener('DOMContentLoader', function(){
 //     document.querySelector('button').onclick=a;
