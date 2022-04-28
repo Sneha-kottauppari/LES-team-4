@@ -1,0 +1,136 @@
+#login{
+    border: none;
+    border-radius: 20px;
+    margin-left: 15%;
+    position: relative;
+    margin-top: 30px;
+    width:530px;
+    background:#f6e2e2;
+}
+header{
+    background: #f6E2E2;
+    margin: 0;
+    height: 100px;
+    margin-bottom: 20px;
+    font-family: "Inria Serif", serif;
+}
+h1{
+    display: inline-block;
+    position: absolute;
+    left: 36%;
+    top:2%;
+    font-family: "Inria Serif", serif;
+}
+h2{
+    font-family:"Inria Serif", serif;
+}
+header>img{
+    margin:19px;
+}
+#container{
+    display:flex;
+    flex-wrap:wrap;
+}
+#pic1 > img{
+    display: block;
+    height: 400px;
+    width: 400px;
+    margin-left: 25%;
+    margin-top: 17%;
+}
+
+h2{
+    text-align:center;
+}
+#specific{
+    background: #ffffff;
+    display: inline-block;
+    border: none;
+    margin-left: 14%;
+    border-radius: 20px;
+    width: 54%;
+    margin-bottom: 20px;
+}
+#specific > img{
+    width:20px;
+    height:20px;
+    display:inline-block;
+    margin:8px;
+}
+#email-label{
+    margin:5%;
+    font-family:"Inria Serif", serif;
+    font-weight:bold;
+}
+#Email{
+    margin-bottom: 28px;
+    margin-top: 10px;
+    margin-left: 14%;
+    border: none;
+    border-radius: 20px;
+    height: 25px;
+    width: 57%;
+}
+#pwd{
+    border: none;
+    margin-left: 14%;
+    border-radius: 20px;
+    height: 25px;
+    width: 57%;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+#password-label{
+    margin:5%;
+    font-family:"Inria Serif", serif;
+    font-weight:bold;
+}
+#remember{
+    margin-left: 8%;
+    margin-right: 2%;
+    font-family:"Inria Serif", serif;
+    font-weight:bold;
+
+
+}
+.checkbox{
+    margin:2%;
+    font-family:"Inria Serif", serif;
+    font-weight:bold;
+
+}
+#login-button{
+    background: blue;
+    border-radius: 20px;
+    margin-left: 33%;
+    margin-top: 20px;
+    width: 80px;
+    margin-bottom: 18px;
+    height: 30px;
+}
+span{
+    display:inline-block;
+    position:relative;
+    bottom:14px;
+    left:2px;
+}
+a[href="one"]{
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 30%;
+    margin-bottom: 80px;
+}
+#Account{
+    display: inline-block;
+    position: absolute;
+    top: 85%;
+    left: 28%;
+    font-family:"Inria Serif", serif;
+    font-weight:bold;
+}
+a[href="two"]{
+    display: inline-block;
+    position: absolute;
+    top: 85%;
+    left: 74%;
+}
