@@ -1,0 +1,48 @@
+#container{
+    width: 100%; height: 50px; background: #F6E2E2; border:50px; word-spacing: 20px;display: inline-flexbox; text-decoration: none;padding:0px;font-family: Inria Serif,Bold
+}
+img {
+    display: inline-flexbox;
+    width: 35px;
+    height: 35px;
+    background:#F6E2E2;
+    border:50px;
+    word-spacing: 500px ;
+}
+
+.lftbox{
+    float:left;width: 150px; height: 300px; background: #e5e5e5;border:1000px; display: inline-flexbox; text-align: center; margin: 80px; font-family: Inria Serif,Bold;
+}
+.btn-group-vertical{
+    width:100px; border-spacing: 0px;margin: 10px;font-family: Inria Serif,Bold;
+}
+
+.midbox{
+    float:left;width:50%;height:50px;background-color:#E8F0EF;display:inline-flexbox;text-align: center;background-position: center; margin:15px;margin-left: 150px;
+    
+}
+h1{
+    text-align: center;margin-left: 80px;
+}
+form{
+    text-align: center; margin:100px;background-position: center;
+    margin-left: -30px; 
+cursor: pointer;
+}
+input[type="Username"]{
+    width:400px;height:50px;float:middle;margin-left: 50px;
+}
+input[type="Email"]{
+    width:400px;height:50px;float:middle;margin-left: 50px;
+}
+input[type="Old pwd"]{
+    width:400px;height:50px;float:middle;margin-left: 50px;
+}
+input[type="New pwd"]{
+    width:400px;height:50px;float:middle;margin-left: 50px;
+}
+.star{
+    color:red;
+}
+
+
