@@ -1,0 +1,12 @@
+*{
+    font-family: serif;
+}
+.div1{
+    width: fit-content;
+    height: max-content;
+    padding: 15px 30px;
+    display: block;
+    margin: auto;
+   text-align: center;
+    background-color: #EEE9E9;
+}
