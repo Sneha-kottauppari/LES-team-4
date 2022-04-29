@@ -108,6 +108,10 @@ h2{
     margin-bottom: 18px;
     height: 30px;
 }
+#login-button a{
+    text-decoration:none;
+    color:black;
+}
 span{
     display:inline-block;
     position:relative;
@@ -128,7 +132,7 @@ a[href="one"]{
     font-family:"Inria Serif", serif;
     font-weight:bold;
 }
-a[href="two"]{
+a[href="register2.html"]{
     display: inline-block;
     position: absolute;
     top: 85%;
