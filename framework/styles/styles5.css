@@ -1,0 +1,83 @@
+.row1{
+    height:100px;
+}
+body{
+    font-family:serif;
+    margin:0;
+    background:#c4c4c4;
+}
+
+header{
+    background: #f6E2E2;
+    margin: 0;
+    height:100px;
+    box-shadow:0px 8px 4px rgba(0,0,0,0.25);
+    margin-bottom:20px;
+}
+#tittle{
+    display: inline-block;
+    position: absolute;
+    left: 30%;
+    font-weight:700;
+    font-size:30px;
+    top:3%;
+}
+h1{
+    font-weight:700;
+    font-size:30px;
+
+}
+#Name-label, #Email-label, #password-label, #qualification-label{
+    font-weight:bold;
+    margin-left:4%;
+
+}
+#Name,#Email,#pwd,#qualification1{
+    margin-left:12%;
+    border-radius:20px;
+    width:60%; 
+    border: 1px solid #313356;
+   
+}
+#Name{
+    margin-left:11%;
+    width:62%;
+}
+header>img{
+    margin:20px;
+}
+#googlelogo{
+    width:20px;
+    height:20px;
+}
+#login{
+    position:absolute;
+}
+#signupwithgmail{
+    background: #ffffff;
+    border: none;
+    border-radius: 20px;
+    width: 58%;
+    height: 30px;
+    margin-left: 18%;
+    position:relative;
+}
+ #Signup{
+    border-radius:20px;
+}
+#Account{
+    font-weight:bold;
+}
+#Entrancepic{
+    width:400px;
+    max-width:100%;
+    margin: 0 auto;
+}
+button{
+    background-color:#1034A6;
+    border-radius: 20px;
+    width: 80px;
+    height: 30px;
+    border:1px solid black;
+    font-weight:600;
+}

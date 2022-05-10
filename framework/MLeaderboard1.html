@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Nav bar</title>
+        <title>Leader board1</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,11 @@
 
           </script>
         <style>
+    body{
+      font-family:serif;
+    }
      #customers {
-    font-family: "Inria Serif ", Helvetica, sans-serif;
+    font-family: serif;
     border-collapse:separate;
     border-spacing:0px 12px;
     
@@ -29,18 +32,13 @@
    
   }
   .main1{
-  border:30px solid #f6e2e2;
+  border:25px solid #D1D0CE;
   border-radius:60px;
   width:763px;
   box-sizing:border-box;
   margin:0 auto;
-  box-shadow:8px 8px 8px #D3D3D3;
+  box-shadow:8px 8px 8px #313356;
   margin-top:20px;
-  }
-  @media screen and (max-width:770px) {
-    .main1{
-      width:90%;
-    }
   }
   
   table{
@@ -53,9 +51,9 @@
   }
   
   #customers tr {background-color: #f2f2f2;}
-  #customers tr:hover {background-color:#ff9999;}
+  #customers tr:hover {background-color:#D1D0CE;}
   #customers tr:nth-child(1){
-    background-color:#A9A9A9;
+  
   }
   #first{
   margin-left:20px;
@@ -68,16 +66,34 @@
     color: white;
   }
   caption{
-  height:30px;
-  width:300px;
-  color:black;
-  border:solid 4px gold;
+  height:50px;
+  width:45%;
+  color:white;
+  border:solid 4px #313356;
   box-shadow:2px 4px 4px #D3D3D3;
-  background:gold;
+  background:#313356;
   border-radius:10px;
   margin:0 auto;
   caption-side:top;
   text-align:center;
+  }
+  @media screen and (max-width:750px) {
+    .main1{
+      width:90%;
+    }
+  }
+  @media screen and (max-width:430px) {
+    .main1{
+      width:85%;
+    }
+    caption{
+      width:65%;
+    }
+  }
+  @media screen and (min-width:1000){
+    .main1{
+      width:80%
+    }
   }
 
         </style>
@@ -164,8 +180,8 @@
               <td>60hrs</td>
             </tr>
           </table>
-          <div style="font-weight:bold; text-align:center; font-size:110%;">you worked for 20hrs</div>  
-          <div style="font-weight:bold; text-align:center; font-size:110%;"> you are at 25th position</div>
+          <div style="font-weight:bold; text-align:center; font-size:110%;">You worked for 20hrs</div>  
+          <div style="font-weight:bold; text-align:center; font-size:110%;"> You are at 25th position</div>
           </div>
       
   </body>
