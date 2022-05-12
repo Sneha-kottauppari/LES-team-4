@@ -18,14 +18,8 @@ header{
     display: inline-block;
     position: absolute;
     left: 30%;
-    font-weight:700;
-    font-size:30px;
+    font-weight:600px;;
     top:3%;
-}
-h1{
-    font-weight:700;
-    font-size:30px;
-
 }
 #Name-label, #Email-label, #password-label, #qualification-label{
     font-weight:bold;
@@ -57,7 +51,7 @@ header>img{
     background: #ffffff;
     border: none;
     border-radius: 20px;
-    width: 58%;
+    width: 62%;
     height: 30px;
     margin-left: 18%;
     position:relative;
@@ -74,10 +68,11 @@ header>img{
     margin: 0 auto;
 }
 button{
-    background-color:#1034A6;
+    background-color:#313356;
     border-radius: 20px;
     width: 80px;
     height: 30px;
     border:1px solid black;
     font-weight:600;
+    color:white;
 }

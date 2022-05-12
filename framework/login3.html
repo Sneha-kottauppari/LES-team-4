@@ -14,6 +14,7 @@
     }
     body{
       background-color:#c4c4c4;
+      font-family:serif;
     }
     .main{
         display:flex;
@@ -28,13 +29,15 @@
         width:100%;
 
     }
-    body{
-        font-family:serif;
+    #title{
+        font-weight:600;
+       /* box-shadow: 10px 10px 4px #AF9191;*/
+        border-radius: 40px;
     }
   </style>
 </head>
 <body>
-      <div class = "main" style="background:#f6e2e2;">
+      <div class = "main" style="background-color: #F6E2E2;box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25 )">
         <img src="/framework/images/croplogo.png"  alt="logo" style="width:60px;height:60px;">
         <div class="main3">
           <h1 id="title">Learner Engagement system</h1>
@@ -70,11 +73,8 @@
                 <br>
             </div>
             <div class="row row-3 mb-3 ms-3">
-                <div class="col-md-1">
-                    <input type="checkbox" name="remember" id="remember" value="is checked">
-                </div>
                 <div class="col-md-4">
-                <label for="remember" class="checkbox">Remember</label>
+                <label><input type="checkbox" name="remember" id="remember" value="is checked" style="margin-right:10px">Remember</label>
                 </div>
             </div>
             <div  class="row row-4 mb-3">
@@ -94,7 +94,7 @@
             </div>
             <div  class="row row-4 mb-3">
                 <div class="col-md-6 offset-4">
-                    <a href="">signup</a>
+                    <a href="">Signup</a>
                 </div>
             </div>
         </div>

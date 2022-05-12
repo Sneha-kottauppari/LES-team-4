@@ -5,7 +5,7 @@
     background: #ffffff;
     border: none;
     border-radius: 20px;
-    width: 62%;
+    width: 64%;
     height: 30px;
     margin-left: 13%;
     position:relative;
@@ -26,15 +26,17 @@
     font-weight:bold;
 }
 #title,#title1{
-    font-weight:bold;
+    font-weight:600px;
 }
+
 button{
-    background-color:#1034A6;
+    background-color:#313356;
     border-radius: 20px;
     width: 80px;
     height: 30px;
     border:1px solid black;
     font-weight:600;
+    color:white;
 }
 a{
     text-decoration:none;
