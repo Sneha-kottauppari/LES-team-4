@@ -6,6 +6,16 @@
     width: 100%;
     font-size:1vw;
 }
+body{
+    font-size: 20px;
+    font-family: serif;
+}
+.d_padding{
+         padding-top: 20px;
+            }
+            nav-link{
+              color:white
+            }
 .div1{
     /* display: block ; */
     padding: 15px;
