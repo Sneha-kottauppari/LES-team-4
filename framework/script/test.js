@@ -35,17 +35,19 @@ function OnConfirm(msg, myYes) {
 // })
 
   
+
+
 function myChart(){
     $("#1").click(function(){
         $("#myChart").show();
         }); 
-    $("#1").mouseenter(function(){
+    $("#1").click(function(){
         $('#myChart2').hide();
         });
 
 var xValues = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"];
 var yValues = [2,4, 1, 3, 10, 11,12];
-var barColors = ["red", "green","blue","orange","brown","yellow"];
+var barColors = ["#ff9a9e", "#ffecd2 ","#ff9a9e","#a1c4fd ","#fcb69f","#667eea "];
 
 new Chart("myChart",{
 
@@ -65,7 +67,7 @@ new Chart("myChart",{
     legend: {display: false},
     title: {
         display: true,
-        text: "Weeks VS Productive Hours"
+        text: "Days VS Productive Hours"
     }
     }
     
@@ -73,16 +75,17 @@ new Chart("myChart",{
 
  function myChart2(){
     
-    $("#2").mouseenter(function(){
+    $("#2").click(function(){
         $('#myChart2').show();
         });
-    $("#2").mouseenter(function(){
+    $("#2").click(function(){
         $('#myChart').hide();
         });
    
-    var xValues = ["January", "Febraury", "March", "April", "May","June","July", "August","September","October", "November","December"];
-    var yValues = [50,40, 50, 65, 48, 48,46,50,40, 50, 65, 30];
-    var barColors = ["red", "green","blue","orange","brown","yellow","red", "green","blue","orange","brown","yellow"];
+        var xValues = ["Day-1", "Day-2", "Day-3", "Day-4", "Day-5","Day-6","Day-7","Day-8","Day-9","Day-10","Day-11","Day-12","Day-13","Day-14","Day-15","Day-16","Day-17","Day-18","Day-19","Day-20","Day-21","Day-22","Day-23","Day-24","Day-25","Day-26","Day-27","Day-28"];
+        var yValues = [2,4,1,3,10,11,12,10,9,8,2,4,1,3,10,11,12,10,9,8,2,4,1,3,10,11,12,9];
+        // var barColors=["#ff9a9e", "#ffecd2 ","#ff9a9e","#a1c4fd ","#13547a ","#667eea ","#434343 ","#ff9a9e", "#ffecd2 ","#ff9a9e","#a1c4fd ","#13547a ","#667eea ","#434343 ","#ff9a9e", "#ffecd2 ","#ff9a9e","#a1c4fd ","#13547a ","#667eea ","#434343 "]
+    
 
     new Chart("myChart2",{
         type: "bar",
@@ -90,7 +93,7 @@ new Chart("myChart",{
         data: {
         labels: xValues,
         datasets: [{
-            backgroundColor: barColors,
+            backgroundColor: "#fcb69f",
             data: yValues
         }]
         },
@@ -100,21 +103,9 @@ new Chart("myChart",{
         legend: {display: false},
         title: {
             display: true,
-            text: "Months VS Productive Hours"
+            text: "Weeks VS Productive Hours"
         }
         }
         
     });
     }
-
-//     $('#cross').on('click', function (e) {
-//         $("#cross-menu").addClass("show");
-// });
-
-// $(document).ready(function(){
-//     $('.dropdown-submenu a.test').on("click", function(e){
-//       $(this).next('ul').toggle();
-//       e.stopPropagation();
-//       e.preventDefault();
-//     });
-//   });
