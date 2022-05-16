@@ -50,10 +50,10 @@
                 margin-right: 80px;font-family: serif;font-weight: bold;
             }
             .header{
-                float:left;width:90%;height:60px;background-color:#E8F0EF;display:inline-flexbox;text-align: center;background-position: center; margin:15px;margin-left:30px; border-radius: 20px; 
+                float:left;width:70%;height:60px;background-color:#313356;display:inline-flexbox;text-align: center;background-position: center; margin:15px;margin-left:70px; border-radius: 20px;color: white;padding-top:12px;
             }
             .blocked{
-                float:left;width:90%;height:60px;background-color:#E8F0EF;display:inline-flexbox;text-align: center;background-position: center; margin:15px;margin-left:30px; border-radius: 20px; 
+                float:left;width:70%;height:60px;background-color:#313356;display:inline-flexbox;text-align: center;background-position: center; margin:15px;margin-left:70px; border-radius: 20px; color: white;padding-top: 12px;
             }
             input[type="Username"]{
                 width: 80%; height:50px;margin-left: 50px;
@@ -71,7 +71,6 @@
             .row{
                 display:flex;
             }
-
         </style>
         </head>
         <body>
@@ -154,9 +153,9 @@
                 </table>
             </div>
         <div class="col-md-4">    
-            <table class="profile" id="table1">
+            <table class="profile table-responsive" id="table1">
                 <thead>
-                    <td><h1 class="header">Student Details</h1></td>
+                    <td><h3 class="header">Student Details</h3></td>
                 </thead>
                 <tbody>
                     <tr>
@@ -177,14 +176,14 @@
                             <input type="password" name="password" placeholder="New password" autofocus="" autocapitalize="none" autocomplete="current-password" required="" id="id_password"></td></tr>
                     <tr>
                         <td>
-                            <button type="submit" class="btn btn-primary" style=" margin-left:150px;margin-bottom: 20px;margin-top: 10px;">Update Changes</button></td></tr>
+                            <button type="submit" class="btn btn-secondary" style=" margin-left:150px;margin-bottom: 20px;margin-top: 10px;">Update Changes</button></td></tr>
                 </tbody>
             </table>
         </div>
         <div class="col-md-6">    
-            <table class="block" id="table2">
+            <table class="block table-responsive" id="table2">
                 <thead>
-                    <td><h1 class="blocked">Blocked Candidates</h1></td>
+                    <td><h3 class="blocked">Blocked Candidates</h3></td>
                 </thead>
                 <tbody>
                     <tr>
@@ -209,7 +208,7 @@
                             <label for="Student5">Student5</label></td></tr>
                     <tr>
                         <td>
-                            <button type="button" class="btn btn-primary btn-lg" style=" margin-left:180px;margin-bottom: 20px;">Unblock</button></td></tr>
+                            <button type="button" class="btn btn-secondary btn-lg" style=" margin-left:180px;margin-bottom: 20px;">Unblock</button></td></tr>
                 </tbody>
 
             </table>
