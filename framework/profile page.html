@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LES</title>
+        <title>settings page</title>
         
         <!-- <link rel="stylesheet" href="styleprof.css"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -53,7 +53,11 @@
                 float:left;width:70%;height:60px;background-color:#313356;display:inline-flexbox;text-align: center;background-position: center; margin:15px;margin-left:70px; border-radius: 20px;color: white;padding-top:12px;
             }
             .blocked{
-                float:left;width:70%;height:60px;background-color:#313356;display:inline-flexbox;text-align: center;background-position: center; margin:15px;margin-left:70px; border-radius: 20px; color: white;padding-top: 12px;
+                float:left;
+                width:70%;
+                height:60px;
+                background-color:#313356;
+                display:inline-flexbox;text-align: center;background-position: center; margin:15px;margin-left:70px; border-radius: 20px; color: white;padding-top: 12px;
             }
             input[type="Username"]{
                 width: 80%; height:50px;margin-left: 50px;
@@ -71,7 +75,22 @@
             .row{
                 display:flex;
             }
-        </style>
+        
+           @media screen and (max-width:1280px) and (min-width:850px) {
+            .blocked
+            {
+
+                height:90px;
+               
+            }
+            @media screen and (max-width:1024px) and (min-width:650px) {
+                .col-md{
+                    padding-left: 150px;
+                }
+                
+            }
+        }
+            </style>
         </head>
         <body>
             <div class="container-fluid">
@@ -141,6 +160,7 @@
                     </div>
                   </nav>
             </div>
+        <div class="container-fluid">
         <div class="row" style="padding-top:80px;display:flex;">  
             <div class="col-md-2">  
                 <table class="new">
@@ -152,7 +172,7 @@
                     </thead>
                 </table>
             </div>
-        <div class="col-md-4">    
+        <div class="col-md" style="padding-top:10px">    
             <table class="profile table-responsive" id="table1">
                 <thead>
                     <td><h3 class="header">Student Details</h3></td>
@@ -180,7 +200,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-6">    
+        <div class="col col-md" style="padding-top:10px ;">    
             <table class="block table-responsive" id="table2">
                 <thead>
                     <td><h3 class="blocked">Blocked Candidates</h3></td>
@@ -214,6 +234,6 @@
             </table>
         </div>
     </div>
-
+</div>
         </body>
 </html>

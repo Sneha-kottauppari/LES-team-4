@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LES</title>
+        <title>discussion post</title>
         <!-- <link rel="stylesheet" href="styledis.css"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -20,24 +20,54 @@
             nav-link{
               color:white
             }
-            .question{
-              float:left;margin-left: 30px;font-family:serif;font-weight:24;text-align: none;text-decoration: none;
-            }
-            .topic{
-              float:left;margin-left: 30px;font-family: serif;font-weight:12;text-decoration: none;
-            }
-
             .header{
              float:left;margin-left:30px;font-family: serif;
             }
+            .question{
+                display:block;
+                margin-left:7%;
+            }
+            .topic{
+                display:block;
+                margin-left:7%;
+
+            }
             .questions{
-              float:left;width:30%;height:400px;display:flexbox;text-align: center;margin-left:100px; margin-top: 10px;border-radius:20px;border:20px solid #e5e5e5 ;box-shadow:0px 0px 6px #D3D3D3;
+              width:40%;height:450px;display:flexbox; margin-top: 10px;border-radius:20px;border:20px solid #e5e5e5 ;box-shadow:0px 0px 6px #D3D3D3;overflow:auto;
             }
             .answers{
-              float:left;margin-right: 20px;width: 80%;height:400px;display:flexbox;text-align: center; margin-top: 10px;border-radius:20px;border:20px solid #e5e5e5 ;box-shadow:0px 0px 6px #D3D3D3;margin-left: 100px;
+              width: 100%;height:330px;display:flexbox;text-align: center; margin-top:10px;border-radius:20px;border:20px solid #e5e5e5 ;box-shadow:0px 0px 6px #D3D3D3;overflow:auto;
            }
-            .post{
-              float:left;margin-right: 20px;width: 72%;height:90px;display:flexbox;text-align: center; margin-top: 5px;border-radius:20px;border:15px solid #e5e5e5 ;box-shadow:0px 0px 6px #D3D3D3;margin-left: 610px;font-family: serif;
+           .main{
+               display:flex;
+               justify-content:space-around;
+           }
+           .main1{
+               display:flex;
+               width:55%;
+               flex-direction:column;
+               justify-content: space-between;
+           }
+           .post{
+            border-radius:20px;border:15px solid #e5e5e5 ;box-shadow:0px 0px 6px #D3D3D3;font-family: serif;margin-top:20px;
+            }
+            a{
+                text-decoration:none;
+            }
+            @media (max-width:830px){
+                .main{
+                    flex-direction:column;
+                    margin:0 auto;
+                }
+                .questions{
+                    width:90%;
+                    margin:0 auto;
+                    margin-top:15px;
+                }
+                .main1{
+                    width:90%;
+                    margin:0 auto;
+                }
             }
         </style>
     </head>
@@ -120,42 +150,27 @@
             <a href="discussion.html" class="btn btn-light" style="margin-left:30px;margin-top:20px;">Discussion</a>
             <a href="post.html" class="btn btn-secondary" style="margin-left:30px;margin-top: 20px;">Post</a><br>
         </div>
-        <table class="table-borderless">
-          <thead>
-            <tr>
+        <div class="main">
               <div class="questions">
-                <a class="question" href="">What is Cyber Security?</a><br>
-                <a class="topic" href="">Technology</a><br><br>
-                <a class="question" href="">What are principles of economics?</a><br>
-                <a class="topic" href="">Economics</a><br><br>
-                <a class="question" href="">What is the meaning of cyber Security?</a><br>
-                <a class="topic" href="">Cyber Security</a>
+                <a class="question" href="" style="margin-top:10px">What is Cyber Security?</a>
+                <a class="topic" href="">Technology</a><br>
+                <a class="question" href="">What are principles of economics?</a>
+                <a class="topic" href="">Economics</a><br>
+                <a class="question" href="">What is the meaning of cyber Security?</a>
+                <a class="topic" href="">Cyber Security</a><br>
               </div>
-            </tr>
-          </thead>
-      </table>
-      <table class="table1">
-        <thead>
-          <td>
-            <div class="answers">
-              <h1 class="header">What is Cyber Security?</h1><br>
+        <div class="main1">
+            <div class="answers" id="answers">
+                <h1 class="header">What is Cyber Security?</h1><br>
               <label class="answer" style="font-family:serif">Person1: Cyber Security is a process that's designed to protect networks and devices from external threats</label><br><br>
               <label class="answer" style="font-family:serif">Person2: Cyber Security is a process that's designed to protect networks and devices from external threats</label>
+              
             </div>
-          </td>
-        </thead>
-    </table>
-    <table class="table2">
-      <thead>
-        <td>
-          <div class="post">
-            <h class="ans" style="float:left">Your answer..........</h>
-            <button type="button" id="one" class="btn btn-secondary" style="margin:10px;">Post</button>
-          </div>
-        <td>
-      </thead>
-    </table>
-    </div>
+            <div class="post">
+                <input type="Your answer" name="Your answer" placeholder="Your answer" autofocus="" autocapitalize="none" autocomplete="answer" required="" id="id_answer"><button type="button" id="one" class="btn btn-secondary" style="margin-left: 350px;">Post</button>
+            </div>
+        </div>
+        </div>
+       </div>
     </body>
 </html>
-
