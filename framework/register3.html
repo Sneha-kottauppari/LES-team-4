@@ -54,44 +54,46 @@
       <div class ="col-md-6 my-3" style = "background:#f6e2e2;border-radius:20px;">
             <h2 style="text-align:center">Sign up</h2>
             <div class ="row mb-3 mt-3" id="signupwithgmail">
-                <div class = "col-md-3">
+                <div class = "col-md-2">
                     <img  id="googlelogo" src ="images/googlelogo.png" alt="googlelogo">
                 </div>
-                <div class = "col-md-7 offset-2" id="login">
+                <div class = "col-md-8 offset-2" id="login">
                     <span style="display:inline-block">Login with Google</span>
                 </div>
             </div>
-            <div class="row row-2 mb-3">
-                <form>
+            <form>
+            <div class="row row-2 ">
                 <label for="Name" id ="Name-label">Name:</label>
-                    <br>
-                <input id ="Name" type="text" name="Name">
-                    <br>
             </div>
-            <div class="row row-3 mb-3">
+            <div class="row mb-3">
+                <input id ="Name" type="text" name="Name" required>
+            </div>
+            <div class="row row-3">
                 <label for="Email" id ="Email-label">Email id:</label>
-                    <br>
-                <input id ="Email" type="email;" name="Name">
-                <br>
+            <div>
+            <div class="row mb-3">
+                <input id ="Email" type="email" name="email" required>   
             </div>
-            <div class="row row-4 mb-3">
+            <div class="row row-4">
                 <label for="pwd" id ="password-label">Password:</label>
-                    <br>
-                <input id ="pwd" type="password" name="Password">
-                <br>
             </div>
-            <div class ="row row-5 mb-3">
+            <div class ="row mb-3">
+                <input id ="pwd" type="password" name="Password" required>
+            </div>
+            <div class ="row row-5">
                 <label for="qualification" id = "qualification-label">Qualification:</label>
-                <input name ="Qualification" list ="qualification" id ="qualification1">
-            <datalist id ="qualification">
-                <option value = "student"></option>
-                <option value = "jobholder"></option>
-                <option value = "undergraduate"></option>
-                <option value ="PGHolder"></option>
-            </datalist>
             </div>
-            <div class ="row row-6 mb-3">
-                <div class="col-md-3 offset-4">
+            <div class="row mb-3">
+                <input name ="Qualification" list ="qualification" id ="qualification1">
+                <datalist id ="qualification">
+                    <option value = "student"></option>
+                    <option value = "jobholder"></option>
+                    <option value = "undergraduate"></option>
+                    <option value ="PGHolder"></option>
+                </datalist>
+            </div>
+            <div class ="row row-6 mb-3 offset-4">
+                <div class="col-md-3">
                     <button type="submit">Sign Up</button>
                 </div>
             </div>

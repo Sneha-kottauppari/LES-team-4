@@ -21,21 +21,17 @@ header{
     font-weight:600px;;
     top:3%;
 }
-#Name-label, #Email-label, #password-label, #qualification-label{
+#Name-label, #Email-label, #password-label, #qualification-label,#re_password-label{
     font-weight:bold;
     margin-left:4%;
 
 }
-#Name,#Email,#pwd,#qualification1{
-    margin-left:12%;
+.Name, .Email, .pwd, #qualification1, .pwd1{
     border-radius:20px;
-    width:60%; 
+    width:65%; 
     border: 1px solid #313356;
+    margin:0 auto;
    
-}
-#Name{
-    margin-left:11%;
-    width:62%;
 }
 header>img{
     margin:20px;
@@ -51,9 +47,9 @@ header>img{
     background: #ffffff;
     border: none;
     border-radius: 20px;
-    width: 62%;
+    width: 60%;
     height: 30px;
-    margin-left: 18%;
+    margin: 0 auto;
     position:relative;
 }
  #Signup{
@@ -75,4 +71,13 @@ button{
     border:1px solid black;
     font-weight:600;
     color:white;
+}
+.success{
+    border-radius:20px;
+    border:2px solid green;
+}
+.error{
+    border-radius:20px;
+    border: 2px solid  red;
+
 }

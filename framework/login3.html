@@ -53,27 +53,28 @@
           </div>
           <div class="col-md-6 my-3" style="border-radius:20px; background:#f6e2e2">
             <div class="row row1 mt-2 mb-3">
-                <h2 id="title1" style="text-align:center">Login</h2>
+                    <h2 id="title1" style="text-align:center">Login</h2>
             </div>
-            <div class ="row " id="signupwithgmail">
-                <div class = "col-md-3">
+            <div class ="row" id="signupwithgmail">
+                <div class = "col-md-2">
                     <img  id="googlelogo" src ="images/googlelogo.png" alt="googlelogo">
                 </div>
-                <div class = "col-md-7 offset-2" id="login">
+                <div class = "col-md-8 offset-2"  id="login">
                     <span style="display:inline-block">Login with Google</span>
                 </div>
             </div>
-            <div class="row row-1 mt-3 mb-3">
+            <form action="Dashboard1.html">
+            <div class="row row-1 mt-3">
                 <label for="Email" id ="Email-label">Email id:</label>
-                    <br>
-                <input id ="Email" type="email;" name="Name">
-                <br>
             </div>
-            <div class="row row-2 mb-3">
+            <div class ="row mb-3">
+                <input id ="Email" type="email;" name="Name"  class="Email">
+            </div>        
+            <div class="row row-2">
                 <label for="pwd" id ="password-label">Password:</label>
-                    <br>
-                <input id ="pwd" type="password" name="Password">
-                <br>
+            </div>
+            <div class="row mb-3">
+                    <input id ="pwd" type="password" name="Password" class="pwd" >
             </div>
             <div class="row row-3 mb-3 ms-3">
                 <div class="col-md-4">
@@ -81,23 +82,24 @@
                 </div>
             </div>
             <div  class="row row-4 mb-3">
-                <div class="col-md-3 offset-4">
-                    <button type="submit">Login</button>
+                <div class="col-md-3 offset-5">
+                    <button type="submit" style="color:white">Login</a></button>
+                </div>
+            </div>
+            </form>
+            <div  class="row row-4 mb-2">
+                <div class="col-md-6 offset-5">
+                    <a href="" style="font-size:18px;">Forgot password</a>
                 </div>
             </div>
             <div  class="row row-4 mb-2">
-                <div class="col-md-6 offset-3">
-                    <a href="">Forgot password</a>
-                </div>
-            </div>
-            <div  class="row row-4 mb-2">
-                <div class="col-md-6 offset-2">
+                <div class="col-md-6 offset-4">
                     <span id="Account">Don't have an account yet?</span>
                 </div>
             </div>
             <div  class="row row-4 mb-3">
-                <div class="col-md-6 offset-4">
-                    <a href="">Signup</a>
+                <div class="col-md-6 offset-6">
+                    <a href="" style="font-size:18px;">Signup</a>
                 </div>
             </div>
         </div>

@@ -2,28 +2,41 @@
     position:absolute;
 }
 #signupwithgmail{
-    background: #ffffff;
     border: none;
-    border-radius: 20px;
-    width: 64%;
     height: 30px;
-    margin-left: 13%;
     position:relative;
+    width:60%;
+    margin:0 auto;
+    border-radius:20px;
+    background:white;
 }
 #googlelogo{
     height:20px;
     width:20px;
 }
-#Email,#pwd{
-    width:60%;
+.Email{  
     border-radius:20px;
     border: 1px solid #313356;
-    margin-left:12%;
-    margin-top:1%;
+    width:65%;
+    margin:0 auto;
 }
-#Email-label,#password-label,#Account{
+.pwd{
+    border-radius:20px;
+    border: 1px solid #313356;
+    width:65%;
+    margin:0 auto;
+
+}
+
+#Email-label,#password-label{
     font-family:serif;
     font-weight:bold;
+    margin-left:3%;
+}
+#Account{
+    font-family:serif;
+    font-weight:bold;
+
 }
 #title,#title1{
     font-weight:600px;
@@ -40,5 +53,14 @@ button{
 }
 a{
     text-decoration:none;
+}
+.success{
+    border-radius:20px;
+    border:2px solid green;
+}
+.error{
+    border-radius:20px;
+    border: 2px solid  red;
+
 }
 
