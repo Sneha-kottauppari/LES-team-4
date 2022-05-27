@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>scheduler</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="icon-pack" href="/framework/circle-solid.svg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">    
+        function toggleField(hideObj,showObj){
+            hideObj.disabled=true;        
+            hideObj.style.display='none';
+            showObj.disabled=false;   
+            showObj.style.display='inline';
+            showObj.focus();
+          }
+          </script>
+          <script>
+            window.onload = function(){
+              var button;
+              let x2 = document.querySelectorAll("tr th");
+              let x3 = document.querySelectorAll("tr");
+              console.log(x2);
+              console.log(x3);
+              for(index=0;index<x2.length;index++){
+                    console.log(x2[index].childNodes[0].nodeValue);
+                   /* console.log(x3[index+1].id);*/
+                    x3[index+1].id = x2[index].childNodes[0].nodeValue;
+                    /*console.log(x3[index+1].id);*/
+              }
+               
+            exampleModal.addEventListener('show.bs.modal', function (event) {
+                 // Button that triggered the modal
+                 button = event.relatedTarget;
+            });
+         window.saveHTML = function(){
+         console.log(button.parentElement);
+         button.parentElement.remove();
+     }
+      window.validate1 = function(){
+       console.log("you are entering into my sector");
+       let y = (document.forms["goal"]["Editgoal"].value).trim();
+       if(y!=""){
+        console.log(button.childNodes[2]);
+        button.removeChild(button.childNodes[2])
+        console.log(button.innerHTML);
+        button.innerHTML = button.innerHTML + y;
+        console.log(button.innerHTML)
+       }
+       return false;
+     }
+        }
+        </script>
+        <script>
+            function validate(){
+              let date = document.forms["schedule"]["selectdate"].value;
+              let time = document.forms["schedule"]["selectslot"].value;
+              let goal = document.forms["schedule"]["Goal"].value;
+              console.log(date);
+              console.log(time);
+              console.log(goal);
+              var y = document.createElement("td")
+              var x = document.createElement("BUTTON");
+              x.innerHTML = time +"<br>" + goal; 
+              x.classList.add('btn', 'btn-primary');
+              x.setAttribute('background-color','#0d6efd');
+              x.setAttribute('data-bs-toggle', 'modal');
+              x.setAttribute('data-bs-target','#exampleModal');
+              console.log(x.childNodes);
+              y.appendChild(x);
+              document.getElementById(date).appendChild(y);
+              return false;
+
+            }
+
+          </script>
+         
+        <style>
+        *{
+
+          font-family: serif;
+        
+        }
+        .active {
+      background-color: #F5EFEF;
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%), 0 2px 10px 0 rgb(0 0 0 / 25%);
+      padding: 0.625rem 1.5rem 0.5rem;
+      color: black;
+  }
+  table  tbody tr{
+     display:table-cell;
+     border-style:none;
+  }
+  tbody, td, tfoot, th, thead{
+    border-style:none;
+  }
+  table  tbody tr td{
+    display:block;
+  }
+  table{
+    display:table;
+
+  }
+  body{
+                font-size: 20px;
+                font-family: serif;
+            }
+            .d_padding{
+                padding-top: 20px;
+            }
+            nav-link{
+              color:white
+            }
+        </style>
+    </head>
+    <body> 
+        <nav class="navbar navbar-light fixed-top" style="background-color:#F6E2E2;">
+            <div class="container-fluid">
+              <!-- <a class="navbar-brand"><img src="/images/croplogo.png" alt="" width="50" height="50" style="padding-left: 10px;"></a> -->
+              <ul class="nav nav-pills" style="color: white;">
+                <li class="nav-item" style="padding-right: 30px;">
+                    <a class="nav-link" aria-current="page" href="#"><img src="images/croplogo.png" width="50px" height="50px"> </a>
+                  </li>
+                <li class="nav-item ">
+                  <a class="nav-link active d_padding" aria-current="page" href="/framework/Dashboard1.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d_padding" aria-current="page"  href="/framework/scheduler.html">Scheduler</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link d_padding" aria-current="page" href="/framework/meetingroom.html">Meeting Room</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d_padding" aria-current="page"  href="/framework/scheduler.html">Discussion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link d_padding" aria-current="page" href="/framework/meetingroom.html">Leader board</a>
+                </li>
+        
+              </ul>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color:#F6E2E2;" >
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Hi Student-Name</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 nav-pills">
+        
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="/framework/images/bell.png" width="25px" height="25px"> Notification
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                          <li><a class="dropdown-item" href="#">Notification-one</a></li>
+                          <li><a class="dropdown-item" href="#">Notification-two</a></li>
+                          <!-- <li> -->
+                        </ul>
+                            <li class="nav-item">
+                            <div class="form-check form-switch" style="padding-top: 10px;">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
+                                <label class="form-check-label" for="flexSwitchCheckChecked">online</label>
+                            </div>
+                            </li>
+                        <!-- <li>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Open this select menu</option> -->
+                                <!-- <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                        </li> --> 
+                            
+                        </li>
+        
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">sign-out</a>
+                    </li>
+        
+                </div>
+              </div>
+            </div>
+          </nav> 
+        <div class="container-fluid" style="background-color: white;padding-top: 100px;">
+            <div class="row" >
+                <div class="col-md-3" style=" margin:50px;padding: 25px; background-color: #C4C4C4;">
+                  <br>
+                  <form id="schedule" onsubmit ="return validate()">
+                  <label for="selectdate" class="form-label">Select Slot</label>
+                  <input class="form-control" list="datalistOptions" id="selectdate" placeholder="Enter Date slot">
+                  <datalist id="datalistOptions">
+                    <option value="24-04-2022">
+                    <option value="25-04-2022">
+                    <option value="26-04-2022">
+                    <option value="27-04-2022">
+                    <option value="28-04-2022">
+                    <option value="29-04-2022">
+                    <option value="30-04-2022">
+                  </datalist>
+                  <br>
+                  <label for="selectslot" class="form-label">Select Slot</label>
+                  <input class="form-control" list="datalistOptions1" id="selectslot" placeholder="Enter Time slot">
+                  <datalist id="datalistOptions1">
+                    <option value="01:00">
+                    <option value="02:00">
+                    <option value="05:00">
+                    <option value="07:00">
+                    <option value="08:00">
+                  </datalist>
+                    <br>
+                    <label for="selectslot" class="form-label">Enter you goal for Session</label>
+                    <input class="form-control" type="text" placeholder="Set Goal" aria-label="default input example" id="Goal">
+                    <br>
+                    <input name="time" style="display:none;" 
+                        onblur="if(this.value==''){toggleField(this,this.previousSibling);}">
+            <button type="submit" style="background-color: #F6E2E2; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 10px;">Add to Schedule</button>
+            <br><br>
+            </form>
+            <button type="button" style="background-color:#F6E2E2; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 10px;">Find Partner</button>
+            <div style="background: #F6E2E2;box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25); margin-top: 50px;">
+                <h6 style="padding-left: 50px;">Your partner is waiting</h6>
+                <a href="/framework/meetingroom.html"><img src="/framework/images/meet.png" width="50px" height="50px"  class="rounded mx-auto d-block" style="border: 2px solid #5D5FEF;
+                box-sizing: border-box;
+                box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.25);" >
+                </a>
+            </div>
+            </div>
+            <div class="col-md-8" style="padding-left: 75px; padding-top: 50px;">
+                <div class="d-grid gap-2 d-md-block" style="float:right; padding-bottom: 25px;">
+                    <button class="btn btn-primary  btn-sm" type="button">scheduled</button>
+                    <button class="btn btn-secondary btn-sm" type="button">unscheduled</button>
+                  </div>
+                <table class="table" style="margin-top: 25px;background:rgb(134, 153, 167)">
+                  <thead>
+                    <tr class="Dates1">
+                      <th>24-04-2022</th>
+                      <th>25-04-2022</th>
+                      <th>26-04-2022</th>
+                      <th>27-04-2022</th>
+                      <th>28-04-2022</th>
+                      <th>29-04-2022</th>
+                      <th>30-04-2022</th>
+                    </tr>
+                    <tbody>
+                      <tr id="myRow">
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                      </tr>
+                      <tr id="myRow">
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                      </tr>
+                      <tr id="myRow">
+                        <td><button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                      </tr>
+                      <tr id="myRow">
+                        <td><button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                      </tr>
+                      <tr id="myRow">
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                      </tr>
+                      <tr id="myRow">
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                      </tr>
+                      <tr id="myRow">
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                      </tr>   
+                    </tbody>
+                  </table>
+           </div>
+           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Schedule</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <label for="selectslot" class="form-label">Delete the slot from your Schedule</label><br>
+                  <button type="button" class="btn btn-primary btn-sm" onclick="saveHTML()">Delete slot</button>
+                  <br>
+                  <form name="goal" onsubmit = "return validate1()">
+                  <label for="selectslot" class="form-label">Change you goal for Session</label>
+                  <input class="form-control" name ="Editgoal" type="text" placeholder="Edit Goal" aria-label="default input example">
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+              
+          </div>
+      </div>
+      </body> 
+      </html>
+            
+
+                    
+              

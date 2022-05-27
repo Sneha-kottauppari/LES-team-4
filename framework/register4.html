@@ -52,33 +52,43 @@
         <img src="/framework/images/loginpic.png" class ="responsive">
       </div>
       <div class ="col-md-6 my-3" style = "background:#f6e2e2;border-radius:20px;">
-            <h2 style="text-align:center">Sign up</h2>
-            <div class ="row mb-3 mt-3" id="signupwithgmail">
-                <div class = "col-md-2">
-                    <img  id="googlelogo" src ="images/googlelogo.png" alt="googlelogo">
-                </div>
-                <div class = "col-md-8 offset-2" id="login">
-                    <span style="display:inline-block">Login with Google</span>
-                </div>
-            </div>
-            <form>
-            <div class="row row-2 ">
+            <h2 style="text-align:center;margin-bottom:20px">Sign up</h2>
+            <form onsubmit= "return validation5()" action ="login4.html">
+            <div class="row row-2">
                 <label for="Name" id ="Name-label">Name:</label>
             </div>
             <div class="row mb-3">
-                <input id ="Name" type="text" name="Name" required>
+                <input id ="Name" type="text" name="Name" class="Name" >
             </div>
+            <div class="row justify-content-center Name-error" style ="color:red">
+               
+            </div> 
             <div class="row row-3">
                 <label for="Email" id ="Email-label">Email id:</label>
             <div>
             <div class="row mb-3">
-                <input id ="Email" type="email" name="email" required>   
+                <input id ="Email" type="email" name="email" class="Email">   
             </div>
+            <div class="row justify-content-center email-error" style ="color:red">
+               
+            </div> 
             <div class="row row-4">
                 <label for="pwd" id ="password-label">Password:</label>
             </div>
             <div class ="row mb-3">
-                <input id ="pwd" type="password" name="Password" required>
+                <input id ="pwd" type="password" name="Password" class="pwd">
+            </div>
+            <div class="row justify-content-center password-error" style="color:red">
+               
+            </div>
+            <div class="row row-4">
+                <label for="pwd1" id ="re_password-label">Re-password:</label>
+            </div>
+            <div class ="row mb-3">
+                <input id ="pwd1" type="password" name="Password" class="pwd1">
+            </div>
+            <div class="row justify-content-center repassword-error" style="color:red"> 
+             
             </div>
             <div class ="row row-5">
                 <label for="qualification" id = "qualification-label">Qualification:</label>
@@ -109,8 +119,6 @@
     </div>
 </div>
   </div>
-  </body>
-  </body>
-  
+  <script src="FormValidation.js"></script>;
 </body>
 </html>
