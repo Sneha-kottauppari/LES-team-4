@@ -52,3 +52,7 @@
           
        }
    }
+   textarea:focus::placeholder {
+    color: transparent;
+  }
+  
