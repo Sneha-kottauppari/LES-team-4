@@ -103,9 +103,13 @@ new Chart("myChart",{
         legend: {display: false},
         title: {
             display: true,
-            text: "Weeks VS Productive Hours"
+            text: "Days VS Productive Hours"
         }
         }
         
     });
     }
+
+ 
+
+  
