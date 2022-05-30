@@ -18,32 +18,51 @@
           }
           </script>
           <script>
+           var scheduler1 = {};
+           var array = [ ];
+           
             window.onload = function(){
               var button;
               let x2 = document.querySelectorAll("tr th");
               let x3 = document.querySelectorAll("tr");
-              console.log(x2);
-              console.log(x3);
+              /*console.log(x2);*/
+              /*console.log(x3);*/
+              for(index=0;index<x2.length;index++){
+               /* console.log(x2[index].childNodes[0].nodeValue);*/
+                let x1 = x2[index].childNodes[0].nodeValue;
+                console.log( typeof x1);
+                scheduler1[x1]= [ ];
+              }
               for(index=0;index<x2.length;index++){
                     console.log(x2[index].childNodes[0].nodeValue);
                    /* console.log(x3[index+1].id);*/
                     x3[index+1].id = x2[index].childNodes[0].nodeValue;
                     /*console.log(x3[index+1].id);*/
               }
-               
+              scheduler1["24-04-2022"].push("9:00","10:00","11:00","12:00");
+              for (let x in scheduler1) {
+                scheduler1[x].push("13:00");
+           };
+          for (let x in scheduler1) {
+                   console.log(scheduler1[x]);
+                 };
             exampleModal.addEventListener('show.bs.modal', function (event) {
                  // Button that triggered the modal
                  button = event.relatedTarget;
             });
          window.saveHTML = function(){
-         console.log(button.parentElement);
+        let y1 = button.childNodes[0].nodeValue;
+         let y2 = button.parentElement.parentElement.id;
+         console.log(`value of y1 is ${y1} and value of y2 is ${y2}`);
+         index = scheduler1[y2].indexOf(y1);
+         console.log(index);
+         scheduler1[y2].splice(index,1);
          button.parentElement.remove();
      }
       window.validate1 = function(){
        console.log("you are entering into my sector");
        let y = (document.forms["goal"]["Editgoal"].value).trim();
        if(y!=""){
-        console.log(button.childNodes[2]);
         button.removeChild(button.childNodes[2])
         console.log(button.innerHTML);
         button.innerHTML = button.innerHTML + y;
@@ -52,16 +71,36 @@
        return false;
      }
         }
-        </script>
-        <script>
             function validate(){
+              console.log("Thanks for entering me");
               let date = document.forms["schedule"]["selectdate"].value;
               let time = document.forms["schedule"]["selectslot"].value;
               let goal = document.forms["schedule"]["Goal"].value;
               console.log(date);
               console.log(time);
               console.log(goal);
-              var y = document.createElement("td")
+              for(let x1 in scheduler1){
+                   console.log(x1);
+                     if(date == x1){
+                     if(!scheduler1[x1].includes(time)){
+                      var y = document.createElement("td")
+                      var x = document.createElement("BUTTON");
+                      x.innerHTML = time +"<br>" + goal; 
+                      x.classList.add('btn', 'btn-primary');
+                      x.setAttribute('background-color','#0d6efd');
+                      x.setAttribute('data-bs-toggle', 'modal');
+                      x.setAttribute('data-bs-target','#exampleModal');
+                      console.log(x.childNodes);
+                      y.appendChild(x);
+                      document.getElementById(date).appendChild(y);
+                      scheduler1[x1].push(time);
+                      return false;
+
+                     }
+                   }
+              }
+             
+              /*var y = document.createElement("td")
               var x = document.createElement("BUTTON");
               x.innerHTML = time +"<br>" + goal; 
               x.classList.add('btn', 'btn-primary');
@@ -70,7 +109,7 @@
               x.setAttribute('data-bs-target','#exampleModal');
               console.log(x.childNodes);
               y.appendChild(x);
-              document.getElementById(date).appendChild(y);
+              document.getElementById(date).appendChild(y);*/
               return false;
 
             }
@@ -95,6 +134,7 @@
   }
   tbody, td, tfoot, th, thead{
     border-style:none;
+
   }
   table  tbody tr td{
     display:block;
@@ -193,7 +233,7 @@
             <div class="row" >
                 <div class="col-md-3" style=" margin:50px;padding: 25px; background-color: #C4C4C4;">
                   <br>
-                  <form id="schedule" onsubmit ="return validate()">
+                  <form id="schedule">
                   <label for="selectdate" class="form-label">Select Slot</label>
                   <input class="form-control" list="datalistOptions" id="selectdate" placeholder="Enter Date slot">
                   <datalist id="datalistOptions">
@@ -209,11 +249,11 @@
                   <label for="selectslot" class="form-label">Select Slot</label>
                   <input class="form-control" list="datalistOptions1" id="selectslot" placeholder="Enter Time slot">
                   <datalist id="datalistOptions1">
-                    <option value="01:00">
-                    <option value="02:00">
-                    <option value="05:00">
-                    <option value="07:00">
-                    <option value="08:00">
+                    <option value="11:00">
+                    <option value="12:00">
+                    <option value="5:00">
+                    <option value="7:00">
+                    <option value="8:00">
                   </datalist>
                     <br>
                     <label for="selectslot" class="form-label">Enter you goal for Session</label>
@@ -221,7 +261,7 @@
                     <br>
                     <input name="time" style="display:none;" 
                         onblur="if(this.value==''){toggleField(this,this.previousSibling);}">
-            <button type="submit" style="background-color: #F6E2E2; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 10px;">Add to Schedule</button>
+            <button type="button" onclick ="validate()" style="background-color: #F6E2E2; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 10px;">Add to Schedule</button>
             <br><br>
             </form>
             <button type="button" style="background-color:#F6E2E2; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 10px;">Find Partner</button>
@@ -251,29 +291,29 @@
                     </tr>
                     <tbody>
                       <tr id="myRow">
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">9:00<br>GoalSet</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">10:00<br>GoalSet</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">11:00<br>GoalSet</button></td>
                             <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
-                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">13:00<br>GoalSet</button></td>
                       </tr>
                       <tr id="myRow">
-                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">13:00<br>GoalSet</button></td>
                       </tr>
                       <tr id="myRow">
-                        <td><button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                        <td><button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">13:00<br>GoalSet</button></td>
                       </tr>
                       <tr id="myRow">
-                        <td><button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                        <td><button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">13:00<br>GoalSet</button></td>
                       </tr>
                       <tr id="myRow">
-                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">13:00<br>GoalSet</button></td>
                       </tr>
                       <tr id="myRow">
-                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">13:00<br>GoalSet</button></td>
                       </tr>
                       <tr id="myRow">
-                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">12:00<br>GoalSet</button></td>
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">13:00<br>GoalSet</button></td>
                       </tr>   
                     </tbody>
                   </table>
