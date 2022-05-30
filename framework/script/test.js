@@ -109,6 +109,35 @@ new Chart("myChart",{
         
     });
     }
+    function checkButton() {    
+        if(document.getElementById('Radio1').checked) {   
+            document.getElementById("Radio1").innerHTML   
+                =" radio button is checked";
+        }   
+        else if(document.getElementById('Radio2').checked) {   
+            document.getElementById("Radio2").innerHTML   
+                = " radio button is checked";
+        }   
+        else if(document.getElementById('Radio3').checked) {   
+            document.getElementById("Radio3").innerHTML   
+                =  " radio button is checked";     
+        }   
+        else if(document.getElementById('Radio4').checked) {   
+            document.getElementById("Radio4").innerHTML   
+                = " radio button is checked"; 
+        }  
+        else if(document.getElementById('Radio5').checked) {   
+            document.getElementById("Radio5").innerHTML   
+                =  " radio button is checked";  
+        }  
+        else {   
+            document.getElementById("error").innerHTML   
+                = "* You have not selected any rating";  
+             return false;
+        }   
+     
+       
+    }   
 
  
 
