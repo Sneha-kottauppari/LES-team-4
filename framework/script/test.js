@@ -130,15 +130,19 @@ new Chart("myChart",{
             document.getElementById("Radio5").innerHTML   
                 =  " radio button is checked";  
         }  
-        else {   
+      
+        else  {   
             document.getElementById("error").innerHTML   
                 = "* You have not selected any rating";  
-             return false;
-        }   
-     
-       
-    }   
-
- 
-
-  
+                return false;
+        
+    };};
+    function textBoxVaidations(){
+     if(document.getElementById("text1").value == "") {
+        document.getElementById("error2").innerHTML="Please enter a message in the textarea.";
+        textarea.style.border="1px solid red";
+        return false;}
+    else if (document.getElementById("text2").value == "") {
+        document.getElementById("error3").innerHTML="This field may not be blank";
+        return false;}
+    }
