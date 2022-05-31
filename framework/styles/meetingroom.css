@@ -25,3 +25,24 @@ body{
 nav-link{
   color:white
 }
+
+.active{
+    background-color: #313356;
+    /* padding: 0.625rem 1.5rem 0.5rem; */
+    color: white;
+    
+}
+.btn:hover:not(.active){
+    background-color: #313356;
+    color: white;
+    box-shadow: #555899;
+    
+    
+}
+.btn:hover {
+    background-color: #313356;
+    color: white;
+    
+    
+    
+}
