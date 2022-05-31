@@ -110,6 +110,7 @@ li{display:inline-flex;} */
         padding: 20px;
         stroke-linecap: butt;
         border-collapse:collapse;
+        font-size:medium;
   border-spacing: 2px;
   width: 100%;
   border: 1px solid #ddd;
