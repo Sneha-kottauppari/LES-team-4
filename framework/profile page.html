@@ -44,6 +44,7 @@
             //             $(":checkbox[value=switch-expert]").attr('checked', false)
             //     });
             // });
+
         
         </script>
         <style>
@@ -56,7 +57,7 @@
                 padding-top: 20px;
             }
             nav-link{
-              color:white
+              color:white;
             }
             .nav1{
               background-color:#313356;
@@ -69,28 +70,31 @@
             #student{
               width: 50rem;
               margin:0 auto; 
-              /* margin-top: 10px; */
+              margin-top: 10px;
               height:34rem;
               text-align: center;
               border-radius: 20px;
             } 
             .header{
-                float:left;width:40%;height:60px;background-color:#313356;text-align: center;background-position: center; margin-left:30%;margin-top: 2%; border-radius: 20px; color:white;padding-top: 10px;font-family: serif;
+                float:left;width:50%;height:12%;background-color:#313356;text-align: center;background-position: center; margin-left:30%;margin-top: 2%; border-radius: 20px; color:white;padding-top: 10px;font-family: serif;
             }
             .header1{
-                float:left;width:100%;height:60px;background-color:#313356;text-align: center;background-position: center; margin-left:30%;margin-top: 2%; border-radius: 20px; color:white;padding-top: 10px;font-family: serif;
+                float:left;width:120%;height:15%;background-color:#313356;text-align: center;background-position: center; margin-left:30%;margin-top: 2%; border-radius: 20px; color:white;padding-top: 10px;font-family: serif;
             }
             #blocked{
                 width: 40rem;
                 margin:0 auto; 
-              /* margin-top: 10px; */
+                margin-top: 10px;
                 height:30rem;
-                text-align: center;
+                /* text-align: center; */
                 border-radius: 20px;
                 display :none;
             }
             #form2{
                 margin-left: 50%;
+            }
+            .image1{
+              width:80%;height:60%;margin-top: 40%;
             }
 
             input[type="firstname"]{
@@ -117,11 +121,57 @@
             label{
                 font-family: serif;font-weight: bold;font-size: 20px;
             }
+            @media screen and (max-width:900px){
+              #student{
+              width: 35rem;
+            }
+          }
+          @media screen and (max-width:600px){
+              #student{
+              width: 27rem;
+            }
+          }
+          @media screen and (max-width:400px){
+              #student{
+              width: 25rem;
+            }
+          }
+          @media screen and (max-width:900px){
+              #blocked{
+                width: 32rem;
+                height:30rem;
+
+            }
+          }
+          @media screen and (max-width:750px){
+              #blocked{
+              width: 27rem;
+            }
+            .image1{
+              width:40%;height:40%;margin-top: 40%;
+            }
+            #form2{
+              margin-left: 20%;
+            }
+          }
+          @media screen and (max-width:500px){
+              #blocked{
+              width: 21rem;
+              margin-left:5%;
+            }
+            .image1{
+              width:50%;height:40%;margin-top: 70%;
+            }
+
+            #form2{
+              margin-left: 20%;
+            }
+          }
 
         </style>
     </head>
     <body>
-<nav class=" nav1 navbar navbar-light fixed-top" style="background-color:#F6E2E2;">
+<nav class=" nav1 navbar navbar-light" style="background-color:#F6E2E2;">
     <div class="container-fluid">
       <!-- <a class="navbar-brand"><img src="/images/croplogo.png" alt="" width="50" height="50" style="padding-left: 10px;"></a> -->
       <ul class="nav nav-pills" style="color: white;">
@@ -196,8 +246,8 @@
   </nav>
   <div class="container-fluid">
   <div class="button">
-      <button class="btn btn-light btn-lg" id="one" onclick="student1()" style="margin-top:7%;margin-left:3%">Profile</button>
-      <button class="btn btn-light btn-lg" id="two" onclick="blocked1()" style="margin-left:1%; margin-top: 7%;">Blocked</button><br>
+      <button class="btn btn-light btn-lg" id="one" onclick="student1()" style="margin-top:2%;margin-left:3%">Profile</button>
+      <button class="btn btn-light btn-lg" id="two" onclick="blocked1()" style="margin-left:1%; margin-top: 2%;">Blocked</button><br>
   </div>
   <div class="card" id ="student">
       <div class="card-horizontal">
@@ -228,21 +278,21 @@
         <h2 class="header1">Blocked Candidates</h2><br><br><br>
         <form id="form2">
             <input type="checkbox" class="check" id="Student1" name="interest" value="Student1">
-            <label for="Student1" class="student">&nbsp;&nbsp;Student1</label><br><br>
+            <label for="Student1" class="student">&nbsp;Student1</label><br><br>
             <input type="checkbox" class="check" id="Student2" name="interest" value="Student2">
-            <label for="Student2" class="student">&nbsp;&nbsp;Student2</label><br><br>
+            <label for="Student2" class="student">&nbsp;Student2</label><br><br>
             <input type="checkbox" class="check" id="Student3" name="interest" value="Student3">
-            <label for="Student3" class="student">&nbsp;&nbsp;Student3</label><br><br>
+            <label for="Student3" class="student">&nbsp;Student3</label><br><br>
             <input type="checkbox" class="cgroup" id="Student4" name="interest" value="Student4">
-            <label for="Student4" class="student">&nbsp;&nbsp;Student4</label><br><br>
+            <label for="Student4" class="student">&nbsp;Student4</label><br><br>
             <input type="checkbox"  class="check"id="Student5" name="interest" value="Student5">
-            <label for="Student5" class="student">&nbsp;&nbsp;Student5</label><br><br>
+            <label for="Student5" class="student">&nbsp;Student5</label><br><br>
             <button type="button" class="btn btn-secondary btn-lg">Unblock</button>
             <!-- <button type="button" class="btn btn-light btn-lg">Cancel</button> -->
         </form>
       </div>
       <div class="img-round-wrapper">
-        <img class="" src="/framework/images/block.jpg"alt="Card image cap" style="width:80%;height:60%;margin-top: 40%;">
+        <img class="image1" src="/framework/images/block.jpg"alt="Card image cap" >
       </div>
     </div>
   </div>
