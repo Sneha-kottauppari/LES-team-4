@@ -1,17 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>LES</title>
-        <link rel="stylesheet" href="/framework/styles/stylesheet.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <head>
+    <title>Discussion</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+          function uniqueID() {
+            return "p"+ Math.floor(Math.random()*100)
+          }
+          function uniqueclass() {
+            return "q"+ Math.floor(Math.random()*100)
+          }
+          console.log(uniqueID());
+          window.onload = (event) => {
+            window.dis=function(){
+            let a = document.forms["form1"]["name"].value;
+            let b = document.forms["form1"]["question"].value;
+            console.log(a);
+            console.log(b);
+            let c1 = uniqueclass();
+            let c2 = uniqueclass();
+            let c = document.getElementById("discussion");
+            let d = `<div class= "discussion2">
+            <div class="card">
+              <div class="card-horizontal">
+                <div class="img-round-wrapper">
+                    <img class="" src="/framework/images/Userp.jpg" alt="Card image cap" style="width:50px;height:50px;margin-left: 20px;margin-top: 20px;">
+                </div>
+                <div class="card-body">
+                   <h4 class="card-title">`+a+`</h4>
+                  <p class="card-text">`+b+`</p>
+                </div>
+             </div>
+          </div>
+          <div class="card">
+            <div class="card-horizontal">
+              <div class="img-round-wrapper">
+                  <img class="" src="/framework/images/Userp.jpg" alt="Card image cap" style="width:50px;height:50px;margin-left: 20px;margin-top: 10px;">
+              </div>
+              <div class="card-body">
+                  <form  class=  ${c1}  id = ${uniqueID()}; >
+                  <input  class = ${c2} id = ${uniqueID()};type="comment" placeholder="Answer.........." style="width:80%;height:40px"><button type="button" onclick="answer(document.querySelector('.${c1}').id,document.querySelector('.${c2}').id)" class="btn btn-primary btn-sm"  style="margin-left: 3%;">Answer</button>
+                  </form>
+              </div>
+            </div>
+        </div>
+        </div>`
+        c.innerHTML += d;
+       
+          };
+          document.body.addEventListener( 'click', function ( event ) {
+            window.answer=function(id1,id2){
+            console.log("hi block");
+            let class1 = document.getElementById(id1).parentElement.parentElement.parentElement.parentElement.firstChild.nextElementSibling;
+            let g = document.forms[id1][id2].value;
+            console.log(g);
+            console.log(class1);
+            class1.innerHTML += `<p class="card-text" style ="margin-left:13%;">${g}</p><button  type="button" onclick="reply()" class="btn btn-primary btn-sm b1" data-bs-toggle="modal" data-bs-target="#reply">Reply<i class="fa fa-mail-reply" style="margin-left:10px;"></i></button>`
+            };
+
+          } );
+          // window.answer=function(id1,id2){
+          //   console.log("hi block");
+          //   let g = document.forms[id1][id2].value;
+          //   console.log(g);
+          //   let sample = document.querySelectorAll(".q1")[0];
+          //   sample.innerHTML += `<p class="card-text" style = "margin-left:10%;">` + g + `</p><button  type="button" onclick="reply()" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#reply" style="float:right; width: 10%; margin-left:88%;">Reply<i class="fa fa-mail-reply" style="margin-left:10px;"></i></button>`
+          //   };
+        };
+
+        </script>
+
         <style>
             body{
                 font-size: 20px;
                 font-family: serif;
+                background-color:#C4C4C4;
             }
             .d_padding{
                 padding-top: 20px;
@@ -19,21 +87,109 @@
             nav-link{
               color:white
             }
+            .card-horizontal {
+              display: flex;
+              flex: 1 1 auto;
+            }
+            .card{
+              width: 50rem;
+              margin:0 auto; 
+              margin-top: 10px;
+            } 
+            .b1{
+              width: 87px;float:right;margin-left:80%;margin-bottom:5%;
+            }
+      @media only screen and (max-width: 1000px) {
+      .card{
+        width:40rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+      .card{
+        width:35rem;
+  }
+}
+@media only screen and (max-width: 650px) {
+      .card{
+        width:30rem;
+  }
+}
+@media only screen and (max-width: 560px) {
+      .card{
+        width:22rem;
+  }
+  .b1{
+    margin-left: 70%;
+  }
+}
 
-          </style>
+        </style>
     </head>
     <body>
-        <nav class="navbar navbar-light" style="background-color:#F6E2E2;">
-            <div class="container-fluid">
-              <!-- <a class="navbar-brand"><img src="/images/croplogo.png" alt="" width="50" height="50" style="padding-left: 10px;"></a> -->
-              <ul class="nav nav-pills" style="color: white;">
-                <li class="nav-item" style="padding-right: 30px;">
-                    <a class="nav-link" aria-current="page" href="#"><img src="images/croplogo.png" width="50px" height="50px"> </a>
-                  </li>
-                <li class="nav-item ">
-                  <a class="nav-link  d_padding" aria-current="page" href="/framework/Dashboard1.html">Dashboard</a>
-                </li>
+      <nav class="navbar navbar-light" style="background-color:#F6E2E2;">
+        <div class="container-fluid">
+          <!-- <a class="navbar-brand"><img src="/images/croplogo.png" alt="" width="50" height="50" style="padding-left: 10px;"></a> -->
+          <ul class="nav nav-pills" style="color: white;">
+            <li class="nav-item" style="padding-right: 30px;">
+                <a class="nav-link" aria-current="page" href="#"><img src="images/croplogo.png" width="50px" height="50px"> </a>
+              </li>
+            <li class="nav-item ">
+              <a class="nav-link active d_padding" aria-current="page" href="/framework/Dashboard1.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d_padding" aria-current="page"  href="/framework/scheduler.html">Scheduler</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d_padding" aria-current="page" href="/framework/meetingroom.html">Meeting Room</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d_padding" aria-current="page"  href="/framework/scheduler.html">Discussion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d_padding" aria-current="page" href="/framework/meetingroom.html">Leader board</a>
+            </li>
+    
+          </ul>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color:#F6E2E2;" >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Hi Student-Name</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 nav-pills">
+    
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="/framework/images/bell.png" width="25px" height="25px"> Notification
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                      <li><a class="dropdown-item" href="#">Notification-one</a></li>
+                      <li><a class="dropdown-item" href="#">Notification-two</a></li>
+                      <!-- <li> -->
+                    </ul>
+                        <li class="nav-item">
+                        <div class="form-check form-switch" style="padding-top: 10px;">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
+                            <label class="form-check-label" for="flexSwitchCheckChecked">online</label>
+                        </div>
+                        </li>
+                    <!-- <li>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option> -->
+                            <!-- <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </li> --> 
+                        
+                    </li>
+    
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a class="nav-link d_padding" aria-current="page"  href="/framework/scheduler4.html">Scheduler</a>
                   </li>
                   <li class="nav-item">
@@ -44,78 +200,100 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link d_padding" aria-current="page" href="/framework/Mleaderboard1.html">Leader board</a>
+=======
+                  <a class="nav-link" aria-current="page" href="#">Settings</a>
                 </li>
-        
-              </ul>
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-        
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color:#F6E2E2;" >
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Hi Student-Name</h5>
-                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 nav-pills">
-        
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          <img src="/framework/images/bell.png" width="25px" height="25px"> Notification
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                          <li><a class="dropdown-item" href="#">Notification-one</a></li>
-                          <li><a class="dropdown-item" href="#">Notification-two</a></li>
-                          <!-- <li> -->
-                        </ul>
-                            <li class="nav-item">
-                            <div class="form-check form-switch" style="padding-top: 10px;">
-                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
-                                <label class="form-check-label" for="flexSwitchCheckChecked">online</label>
-                            </div>
-                            </li>
-                        <!-- <li>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Open this select menu</option> -->
-                                <!-- <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
-                        </li> --> 
-                            
-                        </li>
-        
-                    <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="#">Settings</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">sign-out</a>
-                    </li>
-        
-                </div>
-              </div>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">sign-out</a>
+>>>>>>> 9704e828b853e8ac1b24f216b4ff4854c5023193
+                </li>
+    
             </div>
-          </nav>
-        <div class="button">
-            <a href="discussion.html" class="btn btn-light" style="margin-top:20px; margin-left: 30px;">Discussion</a>
-            <a href="post.html" class="btn btn-secondary" style="margin-top:20px; margin-left: 30px;">Post</a>
+          </div>
         </div>
-        <input type="text" placeholder="Search..">
-        <input type="image" src="/framework/images/search.png">
-        <table class="table"></table>
-            <thead>
-                <h scope="col">Topic Name</h><br>
-                <input type="topic" id="topic" name="topic" ><br><br>
-            <thead>
-        </table>
-        <table class="t"></table>
-            <thead>
-                <h scope="col">Description</h><br>
-                <input type="description" id="description" name="description"><br>
-            <thead>
-        </table>
-        <div style="text-align:center;margin-top:10px;">
-            <button type="button" class="btn btn-secondary btn-sm">Post</button>
+      </nav>
+      <div class="container" style="margin:0 auto">
+      <div class="button">
+        <button class="btn btn-light btn-lg" style="margin-top:3%;margin-left:-5%">Discussion</button>
+        <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#post"style=";margin-left:1%; margin-top: 3%;">Post</button><br>
+      </div>
+      <div id="discussion">
+        <div class="discussion1">
+        <div class="card q1">
+          <div class="card-horizontal">
+            <div class="img-round-wrapper">
+              <img class="" src="/framework/images/Userp.jpg" alt="Card image cap" style="width:50px;height:50px;margin-left: 20px;margin-top: 20px;">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Rajeswari</h4>
+              <p class="card-text">What is Cyber Security?</p>
+              <!-- <h4 class="card-title">Person A</h4> -->
+              <p class="card-text">Cyber security is the application of technologies, processes and controls to protect systems, networks, programs, devices and data from cyber attacks.</p><br>
+              <button  type="button" onclick="reply()" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#reply" style="width:87px;float:right;margin-left: 80%;margin-bottom: 5%;">Reply<i class="fa fa-mail-reply" style="margin-left:10px;"></i></button>
+            </div>
+          </div>
         </div>
-    </body>
+        <div class="card q1">
+          <div class="card-horizontal">
+            <div class="img-round-wrapper">
+              <img class="" src="/framework/images/Userp.jpg" alt="Card image cap" style="width:50px;height:50px;margin-left: 20px;margin-top: 10px;">
+            </div>
+            <div class="card-body">
+              <form id="a1">
+                <input id="comment" placeholder="Answer.........." style="width:80%;height:40px"><button type="button" onclick="answer('a1','comment')" class="btn btn-primary btn-sm"  style="margin-left: 3%;">Answer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal" tabindex="-1" id="post">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Post</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="form1">
+              <div class="modal-body">
+                <h5>Name</h5>
+                <input type="title" id="name" placeholder=" Name" style="width:93%;height:50px;"><br>
+                <h5>Question</h5>
+                <input id="question" placeholder="Question" style="width:93%;height:50px;">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button onclick="dis()"type="button" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal" tabindex="-1" id="reply">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Reply</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h5>Name</h5>
+              <input type="title" placeholder=" Name" style="width:400px;height:50px;"><br><br>
+              <h5>Answer</h5>
+              <input placeholder="Answer" style="width:400px;height:50px;">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <script>
+        let sample = document.querySelectorAll(".q1");
+        console.log(sample[0])
+      </script> 
+      
+  </body>
 </html>
