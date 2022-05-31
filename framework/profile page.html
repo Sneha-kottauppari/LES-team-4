@@ -1,220 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <title>Discussion</title>
+
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LES</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+          </script>
+        <script>
+            var a;
+            function student1(){
+                if(a==1){
+                    document.getElementById("student").style.display="inline-block";
+                    document.getElementById("student").style.marginLeft="25%";
+                    document.getElementById("blocked").style.display="none";
+                    return a=0
+                }
+                else{
+                    document.getElementById("student").style.display="none";
+                    return a=1
+                }
+            }
+            var b;
+            function blocked1(){
+                if(b==1){
+                    document.getElementById("blocked").style.display="inline-block";
+                    document.getElementById("blocked").style.marginLeft="25%";
+                    document.getElementById("student").style.display="none";
+                    return b=0
+                }
+                else{
+                    document.getElementById("blocked").style.display="none";
+                    return b=1
+                    }
+            }
+            $(document).ready(function(){
+                $('input:checkbox').click(function() {
+                    $('input:checkbox').not(this).prop('checked', false);
+                        $(":checkbox[value=switch-expert]").attr('checked', false)
+                });
+            });
         
-        <!-- <link rel="stylesheet" href="styleprof.css"> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="scripts.js"></script>
+        </script>
         <style>
-            .active{
-                box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%), 0 2px 10px 0 rgb(0 0 0 / 25%);
+            body{
+                font-size: 20px;
+                font-family: serif;
+                background-color:#C4C4C4;
             }
-            .new{
-                float:left;width: 150px; height: 300px; background: #e5e5e5;border:1000px; display: inline-flexbox; text-align: center; margin-top:120px;margin-left: 50px; font-family: Serif;border-radius: 10px;box-shadow: 2px 2px 2px #e5e5e5;font-family: serif;
+            .d_padding{
+                padding-top: 20px;
             }
-            .block{
-                float:right;
+            nav-link{
+              color:white
             }
-            .star{
-                color:red;
+            .card-horizontal {
+              display: flex;
+              flex: 1 1 auto;
             }
-            .profile{
-                border-radius:30px;
-                border:20px solid #e5e5e5 ;
-                box-shadow:0px 0px 6px #D3D3D3;
-                background:white;
-                margin-bottom:10px;
-                margin-left:20px;
-                width:100%;
-                height:100%;
-                margin-top: 20px;
-                font-family: serif;font-weight: bold;
-                
-            }
-            .block{
-                border-radius:30px;
-                border:20px solid #e5e5e5 ;
-                box-shadow:0px 0px 6px #D3D3D3;
-                background:white;
-                margin-bottom:0px;
-                margin-left:0px;
-                width:70%;
-                height:100%;
-                margin-top: 20px;
-                margin-right: 80px;font-family: serif;font-weight: bold;
-            }
+            #student{
+              width: 50rem;
+              margin:0 auto; 
+              /* margin-top: 10px; */
+              height:34rem;
+              text-align: center;
+              border-radius: 20px;
+            } 
             .header{
-                float:left;width:90%;height:60px;background-color:#313356;display:inline-flexbox;text-align: center;background-position: center; margin:15px;margin-left:30px; border-radius: 20px; color:white;
+                float:left;width:40%;height:60px;background-color:#313356;text-align: center;background-position: center; margin-left:30%;margin-top: 2%; border-radius: 20px; color:white;padding-top: 10px;font-family: serif;
             }
-            .blocked{
-                float:left;width:90%;height:60px;background-color:#313356;display:inline-flexbox;text-align: center;background-position: center; margin:15px;margin-left:30px; border-radius: 20px; color:white;
+            .header1{
+                float:left;width:100%;height:60px;background-color:#313356;text-align: center;background-position: center; margin-left:30%;margin-top: 2%; border-radius: 20px; color:white;padding-top: 10px;font-family: serif;
             }
-            input[type="Username"]{
-                width: 80%; height:50px;margin-left: 50px;
+            #blocked{
+                width: 40rem;
+                margin:0 auto; 
+              /* margin-top: 10px; */
+                height:30rem;
+                text-align: center;
+                border-radius: 20px;
+                display :none;
             }
-            input[type="Email"]{
-                width:80%;height:50px;margin-left: 50px;
-            }
-            input[type="password"]{
-                width:80%;height:50px;margin-left: 50px;
-            }
-            input[type="checkbox"]{
-                margin-left: 180px;
+            #form2{
+                margin-left: 50%;
             }
 
-            .row{
-                display:flex;
+            input[type="firstname"]{
+                width: 60%; height:40px;margin-left: 5%;margin-top: 15px;
+            }
+            input[type="lastname"]{
+                width: 60%; height:40px;margin-left: 5.8%; margin-top: 15px;
+            }
+            input[type="emailid"]{
+                width:60%;height:40px;margin-left: 7.3%;margin-top: 15px;
+            }
+            input[type="password"]{
+                width:60%;height:40px;margin-left: 2.2%;margin-top: 15px;
+            }
+            #password1{
+                width:60%;height:40px;margin-left: 1.8%;margin-top: 15px;
+            }
+            input[type="number"]{
+                width:60%;height:40px;margin-left: 1.5%;margin-top: 15px;
+            }
+            input[type="checkbox"]{
+                width:20px;height:20px;
+            }
+            label{
+                font-family: serif;font-weight: bold;font-size: 20px;
             }
 
         </style>
-        </head>
-        <body>
-            <div class="container-fluid">
-                <nav class="navbar navbar-light fixed-top" style="background-color:#F6E2E2;">
-                    <div class="container-fluid">
-                      <!-- <a class="navbar-brand"><img src="/images/croplogo.png" alt="" width="50" height="50" style="padding-left: 10px;"></a> -->
-                      <ul class="nav nav-pills" style="color: white;">
-                        <li class="nav-item" style="padding-right: 30px;">
-                            <a class="nav-link" aria-current="page" href="#"><img src="images/croplogo.png" width="50px" height="50px"> </a>
-                          </li>
-                        <li class="nav-item ">
-                          <a class="nav-link d_padding" aria-current="page" href="/framework/Dashboard1.html">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d_padding" aria-current="page"  href="/framework/scheduler.html">Scheduler</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link d_padding" aria-current="page" href="/framework/meetingroom.html">Meeting Room</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d_padding" aria-current="page"  href="/framework/scheduler.html">Discussion</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link d_padding" aria-current="page" href="/framework/meetingroom.html">Leader board</a>
-                        </li>
-                
-                      </ul>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                
-                      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color:#F6E2E2;" >
-                        <div class="offcanvas-header">
-                          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Hi Student-Name</h5>
-                          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 nav-pills">
-                
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  <img src="/framework/images/bell.png" width="25px" height="25px"> Notification
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                  <li><a class="dropdown-item" href="#">Notification-one</a></li>
-                                  <li><a class="dropdown-item" href="#">Notification-two</a></li>
-                                  <!-- <li> -->
-                                </ul>
-                                    <li class="nav-item">
-                                    <div class="form-check form-switch" style="padding-top: 10px;">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
-                                        <label class="form-check-label" for="flexSwitchCheckChecked">online</label>
-                                    </div>
-                                    </li>
-                                    
-                                </li>
-                
-                            <li class="nav-item">
-                              <a class="nav-link" aria-current="page" href="#">Settings</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#">sign-out</a>
-                            </li>
-                
-                        </div>
-                      </div>
+    </head>
+    <body>
+<nav class="navbar navbar-light fixed-top" style="background-color:#F6E2E2;">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand"><img src="/images/croplogo.png" alt="" width="50" height="50" style="padding-left: 10px;"></a> -->
+      <ul class="nav nav-pills" style="color: white;">
+        <li class="nav-item" style="padding-right: 30px;">
+            <a class="nav-link" aria-current="page" href="#"><img src="images/croplogo.png" width="50px" height="50px"> </a>
+          </li>
+        <li class="nav-item ">
+          <a class="nav-link active d_padding" aria-current="page" href="/framework/Dashboard1.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d_padding" aria-current="page"  href="/framework/scheduler.html">Scheduler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d_padding" aria-current="page" href="/framework/meetingroom.html">Meeting Room</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d_padding" aria-current="page"  href="/framework/scheduler.html">Discussion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d_padding" aria-current="page" href="/framework/meetingroom.html">Leader board</a>
+        </li>
+
+      </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color:#F6E2E2;" >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Hi Student-Name</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 nav-pills">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="/framework/images/bell.png" width="25px" height="25px"> Notification
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                  <li><a class="dropdown-item" href="#">Notification-one</a></li>
+                  <li><a class="dropdown-item" href="#">Notification-two</a></li>
+                  <!-- <li> -->
+                </ul>
+                    <li class="nav-item">
+                    <div class="form-check form-switch" style="padding-top: 10px;">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked >
+                        <label class="form-check-label" for="flexSwitchCheckChecked">online</label>
                     </div>
-                  </nav>
-            </div>
-        <div class="container-fluid" style="padding-top:80px;display:flex;">  
-            <div class="col-md-2">  
-                <table class="new">
-                    <thead>
-                        <td>
-                            <button type="button" id="one" onclick="profile()" class="btn btn-light" style="margin-top :0px;">Profile</button><br>
-                            <button type="button" id="two" onclick="blocked()"class="btn btn-light" style="margin-top: 50px;">Blocked</button>
-                        </td>
-                    </thead>
-                </table>
-            </div>
-        <div class="col-md-4">    
-            <table class="profile" id="table1">
-                <thead>
-                    <td><h1 class="header">Student Details</h1></td>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <label style="margin-left:150px">Username<sup class="star">*</sup></label><br>
-                            <input type="Username" name="username" placeholder="Username" autofocus="" autocapitalize="none" autocomplete="username" required="" id="id_username"></td></tr>
-                    <tr>
-                        <td>
-                            <label style="margin-left: 150px;">Email ID<sup class="star">*</sup></label><br>
-                            <input type="Email" name="email"  placeholder="Email" autofocus="" autocapitalize="none" autocomplete="email" required="" id="id_email"></td></tr>
-                    <tr>
-                        <td>
-                            <label style="margin-left: 150px;">Old Password<sup class="star">*</sup></label><br>
-                            <input type="password" name="password" placeholder="Old password" autofocus="" autocapitalize="none" autocomplete="old-password" required="" id="id_password"></td></tr>
-                    <tr>
-                        <td>
-                            <label style="margin-left: 150px;">New Password<sup class="star">*</sup></label><br>
-                            <input type="password" name="password" placeholder="New password" autofocus="" autocapitalize="none" autocomplete="current-password" required="" id="id_password"></td></tr>
-                    <tr>
-                        <td>
-                            <button type="submit" class="btn btn-secondary btn-lg" style=" margin-left:150px;margin-bottom: 20px;margin-top: 10px;">Update Changes</button></td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-6">    
-            <table class="block" id="table2">
-                <thead>
-                    <td><h1 class="blocked">Blocked Candidates</h1></td>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="Student1" name="interest" value="Student1">
-                            <label for="Student1">Student1</label></td></tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="Student2" name="interest" value="Student2">
-                            <label for="Student2">Student2</label></td></tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="Student3" name="interest" value="Student3">
-                            <label for="Student3">Student3</label></td></tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="Student4" name="interest" value="Student4">
-                            <label for="Student4">Student4</label></td></tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="Student5" name="interest" value="Student5">
-                            <label for="Student5">Student5</label></td></tr>
-                    <tr>
-                        <td>
-                            <button type="button" class="btn btn-secondary btn-lg" style=" margin-left:180px;margin-bottom: 20px;">Unblock</button></td></tr>
-                </tbody>
+                    </li>
+                <!-- <li>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option> -->
+                        <!-- <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                </li> --> 
+                    
+                </li>
 
-            </table>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">sign-out</a>
+            </li>
+
         </div>
+      </div>
     </div>
+  </nav>
+  <div class="container-fluid">
+  <div class="button">
+      <button class="btn btn-light btn-lg" id="one" onclick="student1()" style="margin-top:7%;margin-left:3%">Profile</button>
+      <button class="btn btn-light btn-lg" id="two" onclick="blocked1()" style="margin-left:1%; margin-top: 7%;">Blocked</button><br>
+  </div>
+  <div class="card" id ="student">
+      <div class="card-horizontal">
+          <div class="card-body">
+            <h2 class="header">Student Details</h2><br><br><br>
+              <form id="form1">
+                <label for="firstname">FirstName:</label>
+                <input type="firstName" id="firstname" name="interest" placeholder="FirstName"><br>
+                <label for="lastname">LastName:</label>
+                <input  type="lastname" id="lastname" name="interest" placeholder="LastName"><br>
+                <label for="emailid">Email ID:</label>
+                <input type="emailid" id="emailid" name="interest" placeholder="Email ID"><br>
+                <label for="password">OldPassword:</label>
+                <input type="password" id="password" name="interest" placeholder="Old Password"><br>
+                <label for="password">NewPassword:</label>
+                <input type="password" id="password1" name="interest" placeholder="New Password"><br>
+                <label for="number">PhoneNumber:</label>
+                <input type="number" id="number" name="interest" placeholder="Phone number"><br>
+                <button type="button" class="btn btn-secondary btn-lg" style=" margin-left:10%;margin-top: 3%;margin-bottom: 5%;">Update Changes</button>
+                <button type="button" class="btn btn-secondary btn-lg" style=" margin-left:5%;margin-top: 3%; margin-bottom: 5%;">Cancel</button>
+              </form>
+          </div>
+      </div>
+  </div>
+  <div class="card" id="blocked">
+    <div class="card-horizontal">
+      <div class="card-body">
+        <h2 class="header1">Blocked Candidates</h2><br><br><br>
+        <form id="form2">
+            <input type="checkbox" class="check" id="Student1" name="interest" value="Student1">
+            <label for="Student1" class="student">&nbsp;&nbsp;Student1</label><br><br>
+            <input type="checkbox" class="check" id="Student2" name="interest" value="Student2">
+            <label for="Student2" class="student">&nbsp;&nbsp;Student2</label><br><br>
+            <input type="checkbox" class="check" id="Student3" name="interest" value="Student3">
+            <label for="Student3" class="student">&nbsp;&nbsp;Student3</label><br><br>
+            <input type="checkbox" class="cgroup" id="Student4" name="interest" value="Student4">
+            <label for="Student4" class="student">&nbsp;&nbsp;Student4</label><br><br>
+            <input type="checkbox"  class="check"id="Student5" name="interest" value="Student5">
+            <label for="Student5" class="student">&nbsp;&nbsp;Student5</label><br><br>
+            <button type="button" class="btn btn-secondary btn-lg">Unblock</button>
+            <!-- <button type="button" class="btn btn-light btn-lg">Cancel</button> -->
+        </form>
+      </div>
+      <div class="img-round-wrapper">
+        <img class="" src="block.jpg" alt="Card image cap" style="width:60%;height:60%;margin-top: 40%;">
+      </div>
+    </div>
+  </div>
+  </div>
 
-        </body>
+  </body>
 </html>
