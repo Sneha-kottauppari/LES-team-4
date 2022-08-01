@@ -4,8 +4,10 @@ const isBetween = (length, min, max) => {
         console.log("HI Iam False Block");
         return false;
     }
+    else{
        console.log("Hi Iam out of but true");
         return true;
+    }
     }
 const isEmailValid = (email) => {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -133,3 +135,10 @@ function validation5(){
     }
     return true;
 };
+module.exports = {
+    isRequired : isRequired,
+    isBetween : isBetween,
+    isEmailValid : isEmailValid,
+    isPasswordSecure  : isPasswordSecure
+
+}
