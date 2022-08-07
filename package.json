@@ -4,9 +4,9 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "ng build",
-    "dev": "ng start",
-    "start": "ng test"
+    "build": "parcel build index.html",
+    "dev": "parcel index.html --open",
+    "start": "npm run build && npm run dev"
   },
   "dependencies": {
     "build": "^0.1.4",
