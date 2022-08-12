@@ -28,7 +28,7 @@ jobs:
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: LES-team-4-1/build # The folder the action should deploy.
+        folder: build # The folder the action should deploy.
         branch: gh-pages
         
        
